@@ -1,4 +1,4 @@
-package com.binaryin;
+package com.adomasda;
 
 public class DogHouse {
     private boolean dogInHouse;
