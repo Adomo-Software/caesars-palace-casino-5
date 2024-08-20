@@ -23,7 +23,7 @@ class Config {
 }
 
 interface Elevator {
-    void goToFloor(Floor floor, List<Floor> floors);
+    void goToFloor(int floor, List<Floor> floors);
 }
 
 class Casino {
@@ -40,7 +40,7 @@ class Casino {
         return this.floors;
     }
 
-    public void goToFloor(Floor floor) {
+    public void goToFloor(int floor) {
         elevator.goToFloor(floor, floors);
     }
 }
@@ -62,14 +62,12 @@ class Floor {
 
 class RedElevator implements Elevator {
     @Override
-    public void goToFloor(Floor floor, List<Floor> floors) {
+    public void goToFloor(int floor, List<Floor> floors) {
         try {
-            int floorNum = Integer.parseInt(floor.getLabel());
-            int i;
-            for (i = 0; floors.get(i) != floor ; i++) {
+            Integer.parseInt(floors.get(floor - 1).getLabel());
+            for (int i = 0; i < floors.size(); i++) {
                 System.out.println(floors.get(i).getLabel());
             }
-            System.out.println(floors.get(i).getLabel());
         } catch (NumberFormatException nfe) {
             System.out.println("Floor is under construction");
         }
@@ -87,6 +85,8 @@ public class Main {
         Floor floor3 = new Floor(new Config(3, "under construction"));
         Floor floor4 = new Floor(new Config(4, "4"));
         Casino redCasino = new Casino(new RedElevator(), floor1, floor2, floor3, floor4);
-        redCasino.goToFloor(floor4);
+        redCasino.goToFloor(4);
+        System.out.println("user construction case:");
+        redCasino.goToFloor(3);
     }
 }
