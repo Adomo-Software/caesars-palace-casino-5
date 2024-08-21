@@ -7,10 +7,6 @@ class Floor {
         this.configuration = configuration;
     }
 
-    public int getFloorNumber() {
-        return configuration.getFloorNumber();
-    }
-
     public String getLabel() {
         return configuration.getLabel();
     }

@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 class Casino {
-    private List<Floor> floors;
-    private Elevator elevator;
+    private final List<Floor> floors;
+    private final Elevator elevator;
 
     public Casino(Elevator elevator, Floor... floors) {
         this.elevator = elevator;
