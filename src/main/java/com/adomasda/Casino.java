@@ -3,7 +3,7 @@ package com.adomasda;
 import java.util.Arrays;
 import java.util.List;
 
-class Casino {
+public class Casino {
     private final List<Floor> floors;
     private final Elevator elevator;
 

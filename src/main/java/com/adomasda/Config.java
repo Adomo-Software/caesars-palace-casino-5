@@ -1,6 +1,6 @@
 package com.adomasda;
 
-class Config {
+public class Config {
     private final String label;
 
     public Config(String label) {

@@ -2,7 +2,7 @@ package com.adomasda;
 
 import java.util.List;
 
-class RedElevator implements Elevator {
+public class RedElevator implements Elevator {
     @Override
     public void goToFloor(int floor, List<Floor> floors) {
         try {
